@@ -1,0 +1,97 @@
+/* Author: Ethan Vargas */
+@import "Global.css";
+
+.TopBar {
+    width: 100%;
+    min-width: 710px;
+    max-height:100px;
+    height:15vh;
+    background-color: var(---parchment-header);
+    position: fixed;
+    z-index:2;
+}
+
+.TopBarContainer, .TopBarCenter
+{
+    height: 100%;
+    width: 100%;
+}
+
+.Body, .BodyContent
+{
+    width: 100%;
+    overflow:auto; 
+    background-color: var(---parchment-dark);
+}
+
+.TopBarContainer, .TopBarCenter, .BodyContent
+{
+    display: flex;
+}
+
+.TopBarLeft, .TopBarRight
+{
+    width: 15vh;
+}
+
+.DnDLogo
+{
+    height: 40vmin;
+    pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference)
+{
+  .DnDLogo {
+    animation: float2 6s ease-in-out infinite;
+    max-width:100%;
+    max-height:100%;
+  }
+}
+
+.TopBarText
+{
+    font-family:    Draconis;
+    font-size:      calc(10px + 3vw);
+    font-weight:    bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.BodyPadding
+{
+  width: 100%;
+  max-height:100px;
+  height:15vh;
+}
+
+.BodyContent
+{
+  position: absolute;
+}
+
+.BodyCharacter, .BodyEnemy
+{
+  width: 49%;
+  min-width: 350px;
+  background-color: var(---parchment-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  overflow:auto; 
+  min-height: 100vh;
+}
+
+.BodyLine
+{
+  height: 100vh;
+  width: 2%;
+  min-width: 10px;
+  background-color: var(---parchment-dark);
+  z-index:1;
+}

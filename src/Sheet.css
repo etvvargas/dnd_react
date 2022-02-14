@@ -1,0 +1,491 @@
+/* Author: Ethan Vargas */
+@import "Global.css";
+
+.SheetContainer 
+{
+    width: 290px;
+    height: 400px;
+    position: relative;
+    margin: 10px;
+    display:flex;
+}
+
+.Sheet 
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 15px;
+    background-color: var(---parchment-medium);
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow( 5px 5px 0px rgba(0,0,0,0.6));
+    overflow: hidden;
+}
+.Sheet:after 
+{
+    animation-fill-mode: forwards;  
+    content: "";
+    position: absolute;
+    top: -150%;
+    left: -200%;
+    width: 300%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+    );
+    pointer-events: none;
+}
+.Sheet:active:after 
+{
+    opacity: 0;
+}
+.Sheet:before 
+{
+    position: absolute;
+    top: 0;
+    left: -500px;
+    content: "";
+    width: 120px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.6);
+    transform: skew(-50deg);
+    animation: shine 5s ease infinite;
+}
+
+.BackImageCharacter, .BackImageEnemy {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color: var(---parchment-dark-a);
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    mask-size: 50% 50%;
+    mask-mode: alpha;
+    pointer-events: none;
+}
+.BackImageCharacter {
+    mask-image: url(dnd_logo.svg);
+}
+.BackImageEnemy {
+    mask-image: url(skellington.svg);
+}
+
+
+.SheetContent
+{
+    position:relative;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+.SheetSection1, .SheetSection2, .SheetSection3, .SheetSection4, .SheetSection5
+{
+    padding:0px;
+    margin:0px;
+    width:100%;
+    display: flex;
+}
+.SheetSection1
+{
+    height:10%;
+}
+.SheetSection2
+{
+    height:32%;
+}
+.SheetSection3
+{
+    height:35%;
+}
+.SheetSection4
+{
+    height:13%;
+}
+.SheetSection5
+{
+    height:10%;
+}
+
+.CharacterNameContainer, .DeleteButtonContainer 
+{
+    padding:0px;
+    margin:0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.CharacterNameContainer 
+{
+    width: 100%;
+}
+.DeleteButtonContainer 
+{
+    width: 40px;
+}
+
+.CharacterName 
+{
+    display:table;
+    position:relative;
+    bottom:-6px;
+    left:0px;
+    border: 0;
+    border-radius: 18px;
+    background: var(---parchment-light);
+    width: 80%;
+    height: 80%;  
+    margin:auto;
+    padding:0px;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      35px;
+    font-weight:    bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: top;
+    padding-bottom:5px;
+    max-height:100%;
+    text-overflow:ellipsis;
+}
+.CharacterName:focus 
+{
+    outline: none !important;
+    background-color: var(---parchment-dark);
+}
+
+.DeleteButton 
+{
+    border: 0;
+    border-radius: 15px;
+    background-color: var(---parchment-dark);
+    width: 25px;
+    height: 25px;
+    top:5px;
+    right:20%;
+    font-family:    Arial;
+    font-size:      20px;
+    font-weight:    bold;
+    margin-top:8px;
+    margin-right:8px;
+    filter: drop-shadow( 3px 3px 0px rgba(0,0,0,0.6));
+    vertical-align: top; 
+}
+
+.DeleteText
+{
+    color: var(--parchment-light);
+}
+  
+
+.ACContainer, .InitiativeContainer, .SpeedContainer
+{
+    padding:0px;
+    margin:0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.ACContainer
+{
+    width: 34%;
+}
+.InitiativeContainer
+{
+    width: 32%;
+}
+.SpeedContainer
+{
+    width: 34%;
+}
+
+.VerticalPadding
+{
+    width:100%;
+    height:20px;
+}
+
+.StatInput
+{
+    display:table;
+    border-radius: 18px;
+    background: var(---parchment-light-a);
+    padding:0px;
+    margin:auto;
+    width: 70px;
+    height: 70px;
+    border: 0;
+    text-align: center;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      30px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+}
+.StatInput:focus {
+    outline: none !important;
+}
+
+.StatName
+{
+    padding:0px;
+    margin:auto;
+    width: 80%;
+    height: 80%;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      18px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+    text-align:center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.CurrentHPContainer, .TempHPContainer
+{
+    padding:0px;
+    margin:0px;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.HPInput
+{
+    display:table;
+    border-radius: 18px;
+    background: var(---parchment-light-a);
+    padding:0px;
+    margin:auto;
+    width: 120px;
+    height: 100px;
+    border: 0;
+    text-align: center;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      48px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+}
+.HPInput:focus {
+    outline: none !important;
+}
+
+.HPName
+{
+    padding:0px;
+    margin:auto;
+    width: 80%;
+    height: 80%;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      24px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+}
+
+.DSSuccessContainer, .DSContainer, .DSFailureContainer
+{
+    padding:0px;
+    margin:0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.DSSuccessContainer
+{
+    width: 30%;
+}
+.DSContainer
+{
+    width: 40%;
+}
+.DSFailureContainer
+{
+    width: 30%;
+}
+
+.DSText
+{
+    display:table;
+    text-align: center;
+    padding:0px;
+    margin:auto;
+    width: 80%;
+    height: 80%;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      22px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+    top:5px;
+}
+
+.DSResultText {
+    display:table;
+    text-align: center;
+    padding:0px;
+    margin:auto;
+    width: 80%;
+    height: auto;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      18px;
+    font-weight:    bold;
+    vertical-align: top;
+    position:relative;
+}
+.DSPadding
+{
+    height:100%;
+    width:5px;
+}
+
+.DSCheckboxContainer
+{
+  padding:0px;
+  margin:0px;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position:relative;
+  left:-2px;
+  
+}
+
+.DSSuccess, .DSFailure
+{
+    width:22px;
+    height:22px;
+    position:relative;
+    top:0px;
+    left:0px;
+    background-color:var(---parchment-dark);
+    border-radius: 8px;
+    appearance:none;
+    filter: drop-shadow( 2px 2px 0px rgba(0,0,0,0.6));
+}
+.DSSuccess:checked, .DSFailure:checked
+{
+    top:2px;
+    left:2px;
+    filter: none;
+}
+.DSSuccess:checked:after, .DSFailure:checked:after 
+{
+	font-size: 20px;
+	position: relative;
+	top: -3px;
+	left: 3px;
+}
+.DSSuccess:checked:after 
+{
+	content: '\2714';
+	color: var(---green-check);
+}
+.DSFailure:checked:after 
+{
+	content: '\2717';
+	color: var(---red-x);
+}
+
+.LevelContainer, .ClassContainer {
+    padding:0px;
+    margin:0px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.LevelContainer {
+    width: 30%;
+}
+.ClassContainer {
+    width: 70%;
+}
+
+.LevelText {
+    padding:0px;
+    margin:0px;
+    width: 50%;
+    height: 80%;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      30px;
+    font-weight:    bold;
+    padding-left: 15px;
+    padding-right: 5px;
+    vertical-align: top;
+    position:relative;
+    top:-2px;
+    line-height: 30px;
+}
+.LevelInput {
+    padding:0px;
+    margin:0px;
+    width: 80%;
+    height: 80%;
+    background: none;
+    border: 0;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      30px;
+    font-weight:    bold;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+}
+.LevelInput:focus {
+    outline: none !important;
+}
+
+.ClassName {
+    padding:0px;
+    margin:0px;
+    width: 80%;
+    height: 80%;
+    background: none;
+    border: 0;
+    text-overflow:ellipsis;
+    color: var(---text-dark);
+    font-family:    Draconis;
+    font-size:      30px;
+    font-weight:    bold;
+    padding-left: 5px;
+    padding-right: 15px;
+    vertical-align: top;
+    padding-bottom:5px;
+    position:relative;
+}
+.ClassName:focus {
+    outline: none !important;
+}
