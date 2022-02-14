@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/dnd_react/static/css/main.d7c8a757.css",
+    "main.js": "/dnd_react/static/js/main.3d6d1976.js",
+    "static/media/DraconisBoldItalic.ttf": "/dnd_react/static/media/DraconisBoldItalic.7e000f6a50ccb2bd6ba8.ttf",
+    "static/media/DraconisItalic.ttf": "/dnd_react/static/media/DraconisItalic.2968d55313c526274bb5.ttf",
+    "static/media/DraconisBold.ttf": "/dnd_react/static/media/DraconisBold.f4d8b9c53b024fa0b29c.ttf",
+    "static/media/Draconis.ttf": "/dnd_react/static/media/Draconis.a680907cf7417672cfa0.ttf",
+    "static/media/dnd_logo.svg": "/dnd_react/static/media/dnd_logo.37badb481e4518479513019fc72c435f.svg",
+    "static/media/skellington.svg": "/dnd_react/static/media/skellington.e3513b3029f55aee25ff.svg",
+    "index.html": "/dnd_react/index.html",
+    "main.d7c8a757.css.map": "/dnd_react/static/css/main.d7c8a757.css.map",
+    "main.3d6d1976.js.map": "/dnd_react/static/js/main.3d6d1976.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7c8a757.css",
+    "static/js/main.3d6d1976.js"
+  ]
+}
